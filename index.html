@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dados da Tabela</title>
+    <link rel="stylesheet" type="text/css" href="site.css">
+</head>
+<body>
+    <style>
+        /* Adicione estilos CSS personalizados aqui */
+        .menu-links {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+    
+        .menu-links a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+    
+        .menu-links a.active {
+            font-weight: bold;
+            color: #000000; /* Cor para o item ativo */
+        }
+    
+        .highlight {
+            background-color: #eacf40;
+            transition: background-color 0.3s ease;
+        }
+    
+        /* Estilos para a imagem */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto; /* Adicionando separação abaixo da imagem */
+        }
+    
+        .image-text {
+            text-align: center;
+            margin-top: 10px;
+            color: white; /* Adiciona a cor branca */
+        }
+    
+        .yellow-text {
+            color: #eacf40;
+        }
+    
+        .white-text {
+            color: white;
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Alterado para min-height */
+            background-image: url('/img/FUNDOV2.webp');
+            background-size: cover;
+            position: relative; 
+            background-repeat: no-repeat;/* Importante para o posicionamento absoluto */
+        }
+    
+        .footer {
+            position: relative; /* Define a posição relativa para que o posicionamento absoluto funcione */
+            width: 100%;
+            text-align: center;
+            background-image: url('/img/RODAPE.webp'); /* Define a imagem como plano de fundo */
+            color: white; /* Cor do texto */
+        }
+    
+        .footer img {
+            z-index: 1; /* Garante que a imagem do rodapé esteja acima do background */
+        }
+    
+        /* Outros estilos para o rodapé, como cor de texto, etc. */
+        .footer p {
+            position: absolute; /* Define a posição absoluta para que o texto possa ser posicionado em relação à div .footer */
+            bottom: 10px; /* Posiciona o texto a 10px da parte inferior */
+            left: 50%; /* Posiciona o texto no centro horizontalmente */
+            transform: translateX(-50%); /* Centraliza o texto horizontalmente */
+            font-size: 5px; /* Tamanho da fonte */
+        }
+    
+        .credits {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 5px;
+            color: #ffffff;
+        }
+    
+        /* Estilos para o acordeão */
+        .accordion {
+            background-color: #eacf40;
+            color: #000000;
+            cursor: pointer;
+            padding: 20px;
+            width: 40%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 20px;
+            transition: 0.4s;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-left: center;
+            font-family: 'Pilat Extended', 'Segoe UI', sans-serif; /* Adiciona a fonte Pilat Extended */
+        }
+    
+        .accordion.active, .accordion:hover {
+            background-color: #ddd;
+        }
+    
+        .panel.active {
+            display: block;
+        }
+    
+        .panel table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    
+        .panel th, .panel td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    
+    </style>
+    
+    
+    <div class="menu-links">
+        <ul>
+            <li><a href="#" onclick="showPage('home')" class="active">PAGINA INICIAL</a></li>
+            <li><a href="#" onclick="showPage('ranking')">RANKINGS</a></li>
+            <li><a href="#" onclick="showPage('grupos')">GRUPOS</a></li>
+        </ul>
+    </div>
+
+    <div id="home">
+        <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+            <div class="image-container">
+                <img class="imagem titulo" src="/img/PALMAS_SITE2_0000s_0003_01.webp" alt="imagem da LOGO_PALMAS_DE_OURO">
+            </div>
+            <h2>BEM-VINDO AO SITE DOS RANKINGS E GRUPOS!</h2><br>
+            <p class="image-text yellow-text">Explore o nosso espaço dedicado ao acompanhamento da competição! Esta página é o lugar ideal para descobrir os rankings quinzenais, o campeonato anual e os grupos formados.</p>
+            <p class="image-text yellow-text">Aqui, você encontrará atualizações quinzenais, permitindo que você acompanhe de perto os grupos em destaque, os vencedores dos prêmios quinzenais e a contagem total do campeonato anual, além de outras informações importantes.</p> <br>
+            <p class="image-text white-text">Pontuação para os Rankings:</p>
+            <div class="image-container">
+                <img class="imagem titulo" src="/img/image.webp" alt="imagem da pontuação">
+            </div>
+        </div>
+    </div>
+
+    <div id="ranking" style="display: none;">
+        <br><h2>RANKING QUINZENAL</h2>
+        <table border="1">
+            <tr><th>Número</th><th>Nome</th><th>Pontuação</th></tr>
+            <tr><td>1</td><td>Grupo Alagoas 1</td><td>50</td></tr>
+            <tr><td>2</td><td>Grupo Bahia 1</td><td>40</td></tr>
+        </table>
+        <br><h2>RANKING TEMPORADA</h2>
+        <table border="1">
+            <tr><th>Número</th><th>Nome</th><th>Pontuação</th></tr>
+            <tr><td>1</td><td>Grupo Alagoas 1</td><td>50</td></tr>
+            <tr><td>2</td><td>Grupo Bahia 1</td><td>40</td></tr>
+        </table>
+    </div>
+
+    <div id="grupos" style="display: none;">
+        <br>
+        <!-- Acordeão para Alagoas -->
+        <button class="accordion center" onclick="toggleAccordion(this)">Alagoas &#9660;</button>
+        <div class="panel">
+            <table border="1">
+                <tr><th>Nome do Grupo</th><th>Vagas</th></tr>
+                <tr><td>Grupo Alagoas</td><td>10</td></tr>
+            </table>
+            <!-- Div para link do WhatsApp -->
+            <div class="whatsapp-space" id="alagoas-whatsapp" style="text-align: center;">
+                <a href="LINK_PARA_GRUPO_ALAGOAS_NO_WHATSAPP" target="_blank">Clique aqui para entrar no grupo do WhatsApp</a>
+            </div>
+        </div>
+    
+        <!-- Acordeão para Bahia 1 -->
+        <br><button class="accordion center" onclick="toggleAccordion(this)">Bahia 1 &#9660;</button>
+        <div class="panel">
+            <table border="1">
+                <tr><th>Nome do Grupo</th><th>Vagas</th></tr>
+                <tr><td>Grupo Bahia 1</td><td>0</td></tr>
+            </table>
+            <!-- Div para link do WhatsApp -->
+            <div class="whatsapp-space" id="bahia1-whatsapp" style="text-align: center;">
+                <a href="LINK_PARA_GRUPO_BAHIA1_NO_WHATSAPP" target="_blank">Clique aqui para entrar no grupo do WhatsApp</a><br>
+            </div>
+        </div>
+    
+        <!-- Acordeão para Bahia 2 -->
+        <br><button class="accordion center" onclick="toggleAccordion(this)">Bahia 2 &#9660;</button>
+        <div class="panel">
+            <table border="1">
+                <tr><th>Nome do Grupo</th><th>Vagas</th></tr>
+                <tr><td>Grupo Bahia 2</td><td>13</td></tr>
+            </table>
+            <!-- Div para link do WhatsApp -->
+            <div class="whatsapp-space" id="bahia2-whatsapp" style="text-align: center;">
+                <a href="LINK_PARA_GRUPO_BAHIA2_NO_WHATSAPP" target="_blank">Clique aqui para entrar no grupo do WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <img src="/img/RODAPE.webp" alt="Imagem de Rodapé">
+        <p>Feito por: Maria Clara (@devclarapacheco) e Daniel Victor (@danielvictorti)</p>
+    </div>
+
+    <script src="site.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>
